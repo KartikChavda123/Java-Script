@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="" id="a1">Enter The Qauntite</label>
+
+    <input type="text" id="a2">
+
+    <br>
+    <label for="">Price</label>
+
+    <p id="ans">
+        Amount
+    </p>
+    
+</body>
+</html>
+
+<script>
+    let qun = document.getElementById("a2").value
+    
+    let price = 25
+
+    let amt = qun*price
+
+    document.getElementById("ans").innerHTML = amt
+</script>
