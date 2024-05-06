@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="ans">Rs...</h1>
+</body>
+</html>
+
+<script>
+    let calculate;
+    let gst = 18;
+    let service = 1000;
+    let price =  prompt("Enter numbers");
+
+    calculate  = service+(service*(gst/price))
+    
+    document.getElementById("ans").innerHTML = calculate;
+</script>

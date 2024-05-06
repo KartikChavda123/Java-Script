@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>percentage : <font id="totel"></font></h1>
+
+    <h1>Totel Subject : <font id="ans"></font></h1>
+</body>
+</html>
+
+<script>
+    let a = prompt("p =");
+    let b = prompt("t =");
+    let c = prompt("r =");
+
+    let d = (a * b) * c;
+
+    document.getElementById("totel").innerHTML = d;
+
+    d = d/100;
+
+    document.getElementById("ans").innerHTML = d;
+
+</script>

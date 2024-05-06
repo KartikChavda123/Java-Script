@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Totel Subject : <font id="ans"></font></h1>
+
+
+    <h1>percentage : <font id="totel"></font></h1>
+
+</body>
+</html>
+
+<script>
+    let a = prompt("English Mark");
+
+    let b = prompt("Mathes Mark");
+
+    let c = prompt("Gujrati Mark");
+
+    let d = prompt("Science Mark");
+
+    let e = prompt("Hindi Mark");
+
+    let s = +a + +b + +c + +d + +e;
+
+    document.getElementById("ans").innerHTML = s;
+
+    let  percentage = (s/500)*100;
+
+    document.getElementById("totel").innerHTML = percentage;
+
+</script>
