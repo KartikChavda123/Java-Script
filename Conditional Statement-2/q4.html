@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .a1{
+        height: 500px;
+        width: 30%;
+        border: 2px solid black;
+        margin-top: 8%;
+        background-color: cadetblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .a2{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    #in1{
+        height: 30px;
+        width: 250px;
+        background-color: white;
+        border: none;
+    }
+    label{
+        font-size: 25px;
+        margin-top: -25px;
+    }
+    #b1{
+        font-size: 20px;
+        margin-top: 7%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+</style>
+<body>
+    <center>
+        <div class="a1">
+            <div class="a2">
+                <label for="">Enter The Numbers :- </label>
+                <br>
+                <input type="text" id="in1">
+
+                <p id="b1">
+                    
+                </p>
+            </div>
+        </div>
+    </center>
+</body>
+</html>
+
+<script>
+    let b = document.getElementById("in1").value
+
+    if (b === "")
+    {
+        document.getElementById("b1").innerHTML = "Plese Enter Valid Numbers :-"
+    }
+
+    else{
+        if(b == 0)
+        {
+            document.getElementById("b1").innerHTML = "Zero"
+        }
+
+        else if(b  > 0)
+        {
+            document.getElementById("b1").innerHTML = "Positive"
+        }
+        else{
+            document.getElementById("b1").innerHTML = "Nagative"
+        }
+    }
+</script>
