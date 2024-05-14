@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Price</h1>
+
+        <label for="">ENTER THE NUMBERS </label>
+        <input type="text" id="in1">
+        
+        <h3 id="ans"></h3>
+    </center>
+</body>
+</html>
+
+<script>
+    let a = document.getElementById("in1").value
+
+    let b = 18;
+
+    if(a === "")
+    {
+        document.getElementById("ans").innerHTML = "ENTER THE VALID NUMBERS"
+    }
+
+    else{
+        if(a == b)
+        {
+            document.getElementById ("ans").innerHTML = "YOU WIN"
+        }
+
+        else if(a < b)
+        {
+            document.getElementById("ans").innerHTML = "GUESS UP"
+        }
+
+        else if(a>b)
+        {
+            document.getElementById("ans").innerHTML = "GUESS LOW"
+        }
+    }
+</script>

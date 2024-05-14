@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<center>
+    <label for=""> 12 year</label>
+    <input type="text" id="in1">
+    <br><br>
+    <label for="">12 to 18 year</label>
+    <input type="text" id="in2">
+    <br><br>
+    <label for="">18 to 60 year</label>
+    <input type="text" id="in3">
+    <br><br>
+    <label for="">over 60</label>
+    <input type="text" id="in4">
+    
+    <h3 id="ans"></h3>
+</center>
+</body>
+</html>
+
+<script>
+    let a = document.getElementById("in1").value
+
+    let b = document.getElementById("in2").value
+
+    let c = document.getElementById("in3").value
+
+    let d = document.getElementById("in4").value
+
+    if(a === "" && b === "" && c === "" && d === "")
+    {
+        document.getElementById("ans").innerHTML = "ENTER THE VALID EGA"
+    }
+
+    let e = +a*5 + +b*10 + +c*20 + +d*15
+
+    document.getElementById("ans").innerHTML = e
+</script>

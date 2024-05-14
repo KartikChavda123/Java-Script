@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <label for="">ENTER THE TOTEL PRICE</label>
+        <input type="text" id="in1">
+        <p id="ans"></p>
+    </center>
+</body>
+</html>
+
+ <script>
+    let a = document.getElementById("in1").value
+
+    if(a === "")
+    {
+        document.getElementById("ans").innerHTML = "ENTER THE VALID PRICE"
+    }
+    else{
+        if(a>=0 && a<=50)
+        {
+            document.getElementById("ans").innerHTML = "DISCOUNT IS 0%"
+        }
+        else if(a>=51 && a<=100)
+        {
+            document.getElementById("ans").innerHTML = "DISCOUNT IS 10%"
+        }
+
+        else if(a>= 100 && a<=200)
+        {
+            document.getElementById("ans").innerHTML = "DISCOUNT IS 20%"
+        }
+
+        else{
+            document.getElementById("ans").innerHTML = "DISCOUNT IS 25%"
+        }
+    }
+</script>
+
+

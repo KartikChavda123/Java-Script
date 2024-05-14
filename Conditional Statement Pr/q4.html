@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h4>1 DOLLAR PRICE IS = ₹ 83.50</h4>
+
+        <h3>ENTER THE RUPEES</h3>
+        
+        <input type="text" id="in1">
+        <br><br><br>
+        <label for="">CONVERTABLE AMOUT IS RUPEES (₹)</label>
+        <p id="ans"></p>
+    </center>
+</body>
+</html>
+
+<script>
+    let a = 83.50;
+
+    let b = document.getElementById("in1").value
+
+    let convert = a*b
+
+    document.getElementById("ans").innerHTML = convert 
+</script>
