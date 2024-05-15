@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<center>
+    <div style="margin-top: 15%;">
+        <label for="">ENTER THE TRAFIC LIGHT COLER</label>
+    <input type="text" id="in1">
+
+    <h3 id="ans"></h3>
+    </div>
+</center>
+</body>
+</html>
+
+<script>
+    let a = document.getElementById("in1").value
+
+    if(a === "")
+    {
+        document.getElementById("ans").innerHTML = "ENTER THE VALID NUMBERS"
+
+        console.log("")
+    }
+
+    else{
+        switch(a)
+        {
+            case "red":
+            document.getElementById("ans").innerHTML = "STOP"
+            console.log("STOP !")
+            break
+
+            case "yellow":
+            document.getElementById("ans").innerHTML = "SLOW DOWN"
+            console.log("SLOW DOWN")
+            break
+
+            case "green":
+            document.getElementById("ans").innerHTML = "GO"
+            console.log("GO")
+            break
+        }
+    }
+</script>

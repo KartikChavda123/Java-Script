@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <label for="">ENTER THE FIRST NUMBERS</label>
+    <input type="text" id="in1">
+
+    <select name="" id="in2">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+
+    <input type="text" id="in3">
+
+    <h3 id="ans"></h3>
+    </center>
+</body>
+</html>
+
+<script>
+    let a = document.getElementById("in1").value
+
+    let b = document.getElementById("in2").value
+
+    let c = document.getElementById("in3").value
+    
+    if(a === "" && b === "" && c === "")
+    {
+        console.log("")
+    }
+
+    else{
+        switch(b)
+        {
+            case "+":
+            document.getElementById("ans").innerHTML = +a + +c
+            console.log(+a + +c)
+            break
+                
+            case "-":
+            document.getElementById("ans").innerHTML = +a - +c
+            console.log(+a - +c)
+            break
+
+            case "*":
+            document.getElementById("ans").innerHTML = +a * +c
+            console.log(+a * +c)
+            break
+
+            case "/":
+            document.getElementById("ans").innerHTML = +a / +c
+            console.log(+a / +c)
+            break
+
+            default : console.log("ENTER THE VALID NUMBERS")
+
+        }
+    }
+</script>
