@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #ans{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+    }
+    .a1{
+        height: 50vh;
+        width: 50%;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10%;
+        flex-direction: column;
+    }
+    label{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        font-weight: 700;
+    }
+    #in1{
+        height: 25px;
+        width: 300px;
+        border: 2px solid black;
+        margin-top: 2%;
+    }
+</style>
+<body>
+   <center>
+    <div class="a1">
+        <label for="">ENTER THE STRING </label>
+        <input type="text" id="in1">
+        <h4 id="ans">vowels in a string. == </h4>
+    </div>
+   </center>
+</body>
+</html>
+
+<script>
+    let NAME = document.getElementById("in1").value
+
+    var result = 0
+
+    for(let i = 1; i<=NAME.length; i++)
+    {
+        if(NAME[i] === "a" || NAME[i]=== "A" || NAME[i] === "e" || NAME[i]=== "E" || NAME[i] === "i" || NAME[i]=== "I" || NAME[i] === "o" || NAME[i]=== "O" || NAME[i] === "u" || NAME[i]=== "U")
+        {
+            result+= 1
+        }
+    }
+
+    document.getElementById("ans").innerHTML += result 
+</script>
