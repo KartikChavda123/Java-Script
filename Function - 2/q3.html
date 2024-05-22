@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">ENTER THE FIRST STRING</label>
+    <input type="text" id="in1">
+
+    <label for="">ENTER THE SECOND STRING</label>
+    <input type="text" id="in2">
+
+    <h3 id="ans"></h3>
+</body>
+</html>
+
+<script>
+    let a = document.getElementById("in1").value
+    let b = document.getElementById("in2").value
+
+    function concatstring(a,b){
+        return a + b
+    }
+
+    const result = concatstring(a,b)
+
+    document.getElementById("ans").innerHTML = concatstring(a,b)
+    console.log(result)
+</script>
