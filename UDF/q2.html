@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">ENTER THE PRINCIPAL AMOUNT</label>
+    <input type="text" id="in1">
+
+    <label for="">ENTER THE RATE</label>
+    <input type="text" id="in2">
+
+    <label for="">ENTER THE TIME</label>
+    <input type="text" id="in3">
+
+    <h3 id="ans"></h3>
+</body>
+</html>
+
+<script>
+    let a = document.getElementById("in1").value
+
+    let b = document.getElementById("in2").value
+
+    let c = document.getElementById("in3").value
+    
+    function inteast(){
+        let d = (a*b*c)/100
+
+        document.getElementById("ans").innerHTML = d
+    }inteast(a,b,c)
+</script>
