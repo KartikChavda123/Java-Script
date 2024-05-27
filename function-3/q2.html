@@ -1,0 +1,35 @@
+<!-- variable strore function  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">ENTER THE NUMBERS</label>
+    <input type="text" id="in2">
+    <h3 id="ans"></h3>
+</body>
+</html>
+
+<script>
+    let a = document.getElementById("in2").value
+    var b = fac(a)
+    document.getElementById("ans").innerHTML=(b)
+
+    function fac(a)
+    {
+        if(a<=1)
+        {
+            return 1 
+        }
+
+        else{
+            return a * fac(a-1)
+            
+        }   
+    }
+    b()
+</script>
+
