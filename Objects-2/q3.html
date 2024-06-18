@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let student = [
+        {
+            name: "kartik", 
+            roll: 15, 
+            marke: 90
+        },
+
+        {
+             name: "Khushal",
+             roll: 15, 
+             marke: 80
+        },
+    
+        {
+             name: "Ayush",
+             roll: 25, 
+             marke: 50
+        },
+    ]
+
+
+    let ans = student.filter((el)=>{
+        return el.marke>60 && el.roll
+    })
+
+    console.log(ans)
+</script>

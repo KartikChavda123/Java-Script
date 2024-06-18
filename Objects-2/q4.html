@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let student = [
+        {
+            name: "Kartik",
+            Roll: 15,
+            marke: 80
+        },
+
+        {
+            name: "Khushal",
+            Roll: 20,
+            marke: 70
+        },
+
+        {
+            name: "Ayush",
+            Roll: 30,
+            marke: 85
+        },
+
+        {
+            name: "Uthshav",
+            Roll: 90,
+            marke: 50
+        }
+    ]
+
+    let ans = student.reduce((acc , cur)=>{
+        return acc += cur.marke
+    },0)
+    console.log(ans)
+</script>
