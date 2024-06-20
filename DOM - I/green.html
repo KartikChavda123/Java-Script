@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>KARTIK CHAVDA</h1>
+    <h3>KARTIK CHAVDA</h3>
+    <h5>KARTIK CHAVDA</h5>
+    <button onclick="kartik()">color</button>
+    
+    <h4 class="green">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h4>
+    <h4 class="green">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h4>
+    <br><br>
+    <h4 class="blue">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h4>
+    <h4 class="blue">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h4>
+    <br><br>
+    <h4 class="red">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h4>
+    <h4 class="red">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h4>
+    
+    <button onclick="kartik1()">green</button>
+    <button onclick="kartik2()">blue</button>
+    <button onclick="kartik3()">red</button>
+</body>
+</html>
+<script>
+    function kartik(){
+        document.querySelector("h1").style.color = "red"
+        document.querySelector("h3").style.color = "green"
+        document.querySelector("h5").style.color = "blue"
+    }
+
+    function kartik1(){
+        let green = document.getElementsByClassName("green")
+        for(let i=0; i<green.length; i++)
+        {
+            green[i].style.color = "green"
+        }
+    }
+
+    function kartik2(){
+        let blue = document.getElementsByClassName("blue")
+        for(let i = 0; i<blue.length; i++)
+        {
+            blue[i].style.color = "blue"
+        }
+    }
+
+    function kartik3(){
+        let red = document.getElementsByClassName("red")
+        for(let i=0; i<red.length; i++)
+        {
+            red[i].style.color = "red"
+        }
+    }
+</script>
