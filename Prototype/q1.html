@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let arr = [1,5,8,18,11,20]
+
+    Array.prototype.chavda = function(el)
+    {
+        let newarray = []
+
+        for(let i=0; i<this.length; i++)
+        {
+            newarray.push(el(this[i]))
+        }
+        return newarray
+    }
+
+    let ans = arr.chavda((el)=>{
+        return el * 2
+    })
+
+    console.log(ans)
+</script>
