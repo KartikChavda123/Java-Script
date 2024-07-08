@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    img{
+        display: none;
+    }
+</style>
+<body>
+    <center>
+        <h1></h1>
+
+        <img src="https://cdn.dribbble.com/users/1433606/screenshots/9134448/media/6df2b57f103b7a8e62243c90693fb4c0.gif" alt="">
+    </center>
+</body>
+</html>
+
+<script>
+    let index = 10
+
+    let stop = setInterval(()=>{
+        index --
+        document.querySelector("h1").innerHTML = index
+        if(index === 0){
+            clearInterval(stop)
+            document.querySelector("img").style.display = "block"
+            document.querySelector("h1").style.display = "none"
+        }
+    },1000)
+</script>
