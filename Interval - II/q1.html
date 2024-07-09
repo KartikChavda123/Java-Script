@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        display: none;
+    }
+    .a1{
+        height: 250px;
+        width: 100%;
+        /* border: 2px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .a2{
+        height: 250px;
+        width: 90%;
+        /* border: 2px solid black; */
+    }
+    .a2 img{
+        height: 100%;
+        width: 100%;
+    }
+</style>
+<body>
+    <div class="a1">
+        <div class="a2">
+            <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/9e9aa250dfecdbc3.jpg?q=90" alt="">
+            <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/354cde8026deab5a.jpg?q=90" alt="">
+            <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/ca7c68deddbda50e.jpg?q=90" alt="">
+            <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/354cde8026deab5a.jpg?q=90" alt="">
+            <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/9e9aa250dfecdbc3.jpg?q=90" alt="">
+        </div>
+    </div>
+</body>
+</html>
+<script>
+
+let pic = document.querySelectorAll("img")
+let index = 0
+function sliders(index)
+{
+    for(let i=0; i<pic.length; i++)
+    {
+        pic[i].style.display = "none"
+    }
+
+    pic[index].style.display = "block"
+}
+
+function show()
+{
+    setInterval(()=>
+    {
+        sliders(index)
+        index++
+
+        if(index === pic.length)
+        {
+            index = 0
+        }
+    },1000)
+}
+show()
+</script>
