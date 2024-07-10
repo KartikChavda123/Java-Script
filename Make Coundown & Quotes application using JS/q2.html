@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="q2.css">
+</head>
+
+<body>
+    <center>
+        <h1 id="hour"></h1>
+        <h1>:</h1>
+        <h1 id="min"></h1>
+        <h1>:</h1>
+        <h1 id="sec"></h1>
+        <br>
+        <h1 id="em">World Environment Day</h1>
+    </center>
+
+    <div class="a1">
+
+        <div class="a2">
+            <img src="IMG/b1.jpg" alt="">
+            <img src="IMG/b2.jpg" alt="">
+            <img src="IMG/b3.jpg" alt="">
+            <img src="IMG/b4.jpg" alt="">
+            <img src="IMG/b5.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    let hours = 11;
+    let stop = setInterval(() => {
+        hours++
+
+        document.getElementById("hour").innerHTML = hours
+
+        if (hours === 12) {
+            clearInterval(stop)
+            document.getElementById("em").style.display = "block"
+            let pic = document.querySelectorAll("img")
+            let index = 0
+            function sliders(index) {
+                for (let i = 0; i < pic.length; i++) {
+                    pic[i].style.display = "none"
+                }
+
+                pic[index].style.display = "block"
+            }
+
+            function show() {
+                setInterval(() => {
+                    sliders(index)
+                    index++
+
+                    if (index === pic.length) {
+                        index = 0
+                    }
+                }, 1000)
+            }
+            show()
+
+        }
+    }, 10000)
+    document.getElementById("hour").innerHTML = hours
+
+    
+    let mins = 59;
+    let stop1 = setInterval(() => {
+        mins++
+
+        document.getElementById("min").innerHTML = mins
+
+        if (mins === 60) {
+            clearInterval(stop1)
+            document.getElementById("min").innerHTML = "00"
+        }
+    }, 10000)
+    document.getElementById("min").innerHTML = mins
+
+
+    let secs = 50;
+    let stop2 = setInterval(() => {
+        secs++
+
+        document.getElementById("sec").innerHTML = secs
+
+        if (secs === 60) {
+            clearInterval(stop2)
+            document.getElementById("sec").innerHTML = "00"
+        }
+    }, 1000)
+    document.getElementById("sec").innerHTML = secs
+
+
+
+</script>
