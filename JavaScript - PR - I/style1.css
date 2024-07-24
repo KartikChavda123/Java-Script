@@ -1,0 +1,469 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.a1{
+  height: 500px;
+  width: 100%;
+  /* border: 2px solid; */
+}
+.swiper {
+  width: 100%;
+  height: 100vh;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.image1{
+  background-image: url('https://learts-demo.myshopify.com/cdn/shop/files/slide-3.jpg?v=1613704583');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.image2 {
+  background-image: url('https://learts-demo.myshopify.com/cdn/shop/files/slide-1.jpg?v=1613704583');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.image3{
+  background-image: url('https://learts-demo.myshopify.com/cdn/shop/files/slide-2.jpg?v=1613704583');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.animate-text {
+  margin-top: 50px;
+  opacity: 0;
+  animation: fade-image 1s forwards;
+}
+
+@keyframes fade-image {
+  from {
+    margin-top: 50px;
+    opacity: 0.5;
+  }
+  to {
+    margin-top: 0px;
+    opacity: 1;
+  }
+}
+
+.navbar .navbar-nav .nav-link {
+  color: black;
+}
+.sm-icons {
+  flex-direction: row;
+}
+.sm-icons .nav-link {
+  padding-right: 1em;
+}
+
+.a2{
+  font-family: "Rouge Script";
+  font-size: 76px;
+  font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  color: #baa491;
+  transform: matrix(1,0,0,1,0,30);
+  outline: rgba(186,164,145);
+}
+.a3{
+  font-family: "Marcellus";
+  font-size: 65px;
+  text-align: center;
+  margin-top: 3%;
+  color: #333333;
+}
+.a4{
+  height: 40px;
+  width: 180px;
+  border-radius: 10px;
+  /* border: 1px solid red; */
+  background-color: white;
+  color: black;
+  font-size: 18px
+}
+#a5{
+  height: 470px;
+  width: 470px;
+  /* border: 1px solid red; */
+  border-radius: 50%;
+  /* background-color: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://learts-demo.myshopify.com/cdn/shop/files/slide-2-1.png?v=1613704587");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#a6{
+  height: 435px;
+  width: 435px;
+  border: 1px solid #777777;
+  border-radius: 50%;
+}
+.a7{
+  font-family: "Rouge Script";
+  font-size: 70px;
+  font-weight: 500;
+  margin-left: 13%;
+  margin-top: 12%;
+}
+.a8{
+  font-family: "Marcellus";
+  font-size: 50px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  margin-top: -5%;
+}
+.a9{
+  height: 30px;
+  width: 140px;
+  font-family: "Marcellus";
+  font-size: 20px;
+  border-bottom: 3px solid black;
+  /* background-color:whitesmoke; */
+  border-radius: 0px;
+  /* margin-left: 25%; */
+}
+.a10{
+  font-family: "Rouge Script";
+  font-size: 80px;
+  font-weight: 300;
+}
+.a11{
+  color: #72A499;
+  font-size: 37px;
+  font-family: "Marcellus";
+  margin-top: -8%;
+}
+.a12{
+  height: 40vh;
+  width: 100%;
+  /* border: 1px solid black; */
+}
+.a13{
+  color: #72A499;
+  font-size: 80px;
+  font-family: "Rouge Script";
+  margin-top: 4%;
+}
+.a14{
+  font-family: "Marcellus";
+  color: black;
+  font-size: 55px;
+  margin-top: -3%;
+}
+.a15{
+  height: 85vh;
+  width: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image: url("); */
+}
+.a16{
+  height: 85vh;
+  width: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.a17{
+  height: 470px;
+  width: 470px;
+  /* border: 1px solid black; */
+  background-image: url("https://learts-demo.myshopify.com/cdn/shop/files/sale-banner1-1.png?v=1613704624");
+  background-position: center;
+  background-size: center;
+  background-repeat: no-repeat;
+}
+.a18{
+  height: 370px;
+  width: 570px;
+  /* border: 1px solid black; */
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 1s;
+  overflow: hidden;
+  /* background-image: url("https://learts-demo.myshopify.com/cdn/shop/files/sale-banner2-1_1024x1024.jpg?v=1613704624"); */
+}
+.a18 img{
+  height: 100%;
+  width: 100%;
+  transition: 1s;
+}
+.a18 img:hover{
+  transform: scale(1.1);
+  transition: 1s;
+}
+.a19{
+  height: 95px;
+  width: 600px;
+  /* border: 1px solid black; */
+  margin-top: 5%;
+}
+.a20{
+  font-family: "Marcellus";
+  font-size: 45px;
+  text-align: left;
+  color: #333333;
+}
+.a21{
+  margin-top: -3%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-align: left;
+}
+#a22{
+  height: 55px;
+  width: 178px;
+  /* border: 1px solid white; */
+  background-color: #F9F0EE;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 50px;
+  float: right;
+  margin-top: -15%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.a23 img{
+  height: 75px;
+  width: 157px;
+  margin-top: 12%;
+}
+.a23{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.a24{
+  font-family: "Rouge Script";
+  font-size: 80px;
+}
+.a25{
+  font-family: "Marcellus";
+  font-size: 55px;
+  font-weight: 300;
+}
+.a26{
+  height: 35vh;
+  width: 100%;
+  /* border: 1px solid black; */
+  overflow: hidden;
+}
+.a26 img{
+  height: 100%;
+  width: 100%;
+  transition: 1s;
+}
+.a27{
+  height: 35vh;
+  width: 100%;
+  overflow: hidden;
+  /* border: 1px solid black; */
+}
+.a27 img{
+  height: 100%;
+  width: 100%;
+  transition: 1s;
+}
+.a28{
+  height: 35vh;
+  width: 100%;
+  overflow: hidden;
+  /* border: 1px solid black; */
+}
+.a28 img{
+  height: 100%;
+  width: 100%;
+  transition: 1s;
+}
+
+.a26 img:hover{
+  transition: 1s;
+  transform: scale(1.1);
+}
+.a27 img:hover{
+  transition: 1s;
+  transform: scale(1.1);
+}
+.a28 img:hover{
+  transition: 1s;
+  transform: scale(1.1);
+}
+.a30{
+  font-family: "Marcellus";
+  font-size: 24px;
+  margin-top: 2%;
+}
+.a31{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+.a32{
+ height: 40vh;
+ width: 100%;
+ /* border: 1px solid black;  */
+}
+
+.a33{
+  height: 55vh;
+  width: 100%;
+  /* border: 1px solid black; */
+  background-image: url("https://learts-demo.myshopify.com/cdn/shop/products/product-41-600x800_09fc8d73-4e84-4989-a678-a86cabbe7775_600x800_crop_bottom.jpg?v=1611054938");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.a33:hover{
+  background-image: url("https://learts-demo.myshopify.com/cdn/shop/products/product-40-600x800_9ca54d0d-5cd3-4ee4-be99-e2ff0ae8327f_600x800_crop_bottom.jpg?v=1611054938");
+  transition: 1s;
+}
+.a34{
+  height: 55vh;
+  width: 100%;
+  /* border: 1px solid black; */
+  background-image: url("https://learts-demo.myshopify.com/cdn/shop/products/product-27-540x720_600x800_crop_bottom.jpg?v=1609327532");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.a34:hover{
+  background-image: url("https://learts-demo.myshopify.com/cdn/shop/products/product-28-540x720_600x800_crop_bottom.jpg?v=1609327532");
+  transition: 1s;
+}
+.a35{
+  height: 55vh;
+  width: 100%;
+  /* border: 1px solid black; */
+  background-image: url("https://learts-demo.myshopify.com/cdn/shop/products/product-09-540x720_600x800_crop_bottom.jpg?v=1609326772");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.a35:hover{
+  background-image: url("https://learts-demo.myshopify.com/cdn/shop/products/product-10-540x720_600x800_crop_bottom.jpg?v=1609326772");
+  transition: 1s;
+}
+.a36{
+  height: 55vh;
+  width: 100%;
+  /* border: 1px solid black; */
+  background-image: url("https://learts-demo.myshopify.com/cdn/shop/products/product-24-540x720_600x800_crop_bottom.jpg?v=1609317343");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.a36:hover{
+  background-image: url("https://learts-demo.myshopify.com/cdn/shop/products/product-25-540x720_600x800_crop_bottom.jpg?v=1609317343");
+  transition: 1s;
+}
+.b1{
+  color: #7E7E7E;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 2%;
+}
+.b2{
+  color: #F8796C;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  margin-top: -3%;
+}
+.b3{
+  color: #AAAAAA;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+.c1{
+  color: black;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  margin-top: -3%;
+}
+
+.c2{
+  height: 80vh;
+  width: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F4EDE7;
+}
+.c3{
+  height: 70vh;
+  width: 50%;
+  /* border: 1px solid black; */
+}
+#c4{
+  text-decoration: none;
+  padding: 15px;
+  font-family: "Jost";
+  color: #777777;
+  font-weight: 500;
+}
+/* .c5{
+  height: 50px;
+  width: 177px;
+  border: 1px solid black;
+  border-radius: 50px;
+  background-color: #333333;
+} */
+#c6{
+  height: 45px;
+  width: 500px;
+  border-radius: 50px;
+  margin-top: 5%;
+  padding-left: 15px;
+  border: none;
+}
+
+.c7{
+  margin-top: 3%;
+  font-size: 19px;
+}
+#c8{
+  padding: 18px;
+}
+.c9{
+  font-size: 16px;
+  color: #777777;
+  font-weight: 500;
+  margin-top: 5%;
+}
+
+#c10{
+  font-size: 18px;
+  padding: 10px; 
+}
