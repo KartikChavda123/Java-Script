@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <div id="main">
+            <input type="text" id="a1" placeholder="ENTER THE CITY NAME">
+            <button id="a2" onclick="serchbtn()">search</button>
+        </div>
+    </center>
+</body>
+
+</html>
+
+<script>
+
+    function serchbtn()
+    {
+        let data = document.getElementById("a1").value
+
+        fetch("https://data.covid19india.org/v4/min/data.min.json")
+        .then((res)=>{
+            return res.json()
+        }).then((json)=>{
+            console.log(json)
+            displaydata(json)
+        })
+    }
+
+    function displaydata(data)
+    {
+        let div = document.createElement("div")
+        div.className("div2")
+
+        let p = document.createElement("p")
+        p.innerHTML = data.total
+
+
+        div.append(p)
+        document.getElementById("main").append(div)
+    }
+</script>
