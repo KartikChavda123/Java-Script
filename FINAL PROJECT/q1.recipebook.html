@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Search</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #searchBtn {
+            margin-left: 5%;
+            border: none;
+            width: 150px;
+            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #searchItem {
+            width: 320px;
+            border: none;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #00feba, #5b548a);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 10px;
+            width: 35%;
+            height: 90px;
+            margin: 20px 2.5%;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        #a1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header input[type="text"] {
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 15px;
+            width: 300px;
+            transition: all 0.3s;
+        }
+
+        header input[type="text"]:focus {
+            border-color: #00feba;
+            box-shadow: 0 0 10px rgba(0, 254, 186, 0.5);
+        }
+
+        header button {
+            background-color: #fff;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        header button:hover {
+            background-color: #00feba;
+            color: #333;
+        }
+
+        #mainDiv {
+            width: 90%;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .item_div {
+            background-color: #444;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 450px;
+        }
+
+        .item_div:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .item_div img {
+            width: 100%;
+            border-bottom: 3px solid #00feba;
+        }
+
+        .item_content {
+            padding: 20px;
+        }
+
+        .item_content h2 {
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .item_content p {
+            font-size: 14px;
+            color: #bbb;
+            margin: 10px 0;
+        }
+
+        .btn {
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 5px;
+            padding: 10px 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-edit {
+            background-color: #F59E0B;
+            color: #fff;
+            width: 150px;
+        }
+
+        .btn-edit:hover {
+            background-color: black;
+            transform: scale(1.05);
+        }
+
+        .btn-update {
+            background-color: #F59E0B;
+            color: #fff;
+            width: 150px;
+        }
+
+        .btn-update:hover {
+            background-color: black;
+            transform: scale(1.05);
+        }
+
+        .input_box {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            display: none;
+            margin: 10px auto;
+            padding: 10px;
+            width: 80%;
+        }
+        .btn-delete{
+            background-color: #F59E0B;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 150px;
+        }
+        .btn-delete:hover {
+            background-color: black;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <header>
+            <div class="flex items-center" id="a1">
+                <input id="searchItem" type="text" placeholder="Enter your recipe...">
+                <button id="searchBtn" style="color: black;">Search</button>
+            </div>
+        </header>
+    </center>
+
+    <div id="mainDiv">
+        <p class="text-3xl font-bold mt-3" style="font-family: Cedarville Cursive; font-size: 40px; font-weight: 800;">Enter Food Category...</p>
+    </div>
+
+    <script>
+        document.getElementById("searchBtn").addEventListener("click", function () {
+            const search = document.getElementById("searchItem").value;
+
+            fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
+                .then((res) => res.json())
+                .then((json) => {
+                    console.clear();
+                    console.log(json);
+
+                    let mainDiv1 = document.getElementById("mainDiv");
+                    mainDiv1.innerHTML = "";
+
+                    if (json.meals) {
+                        json.meals.forEach((meal) => {
+                            let recipeDiv = document.createElement("div");
+                            recipeDiv.className = "item_div";
+                            recipeDiv.innerHTML = `
+                                <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+                                <div class="item_content">
+                                    <h2 id="text">${meal.strMeal}</h2>
+                                    <p><strong>Tags:</strong> ${meal.strTags || 'N/A'}</p>
+                                    <p><strong>Category:</strong> ${meal.strCategory}</p>
+                                    <p><strong>idMeal:</strong> ${meal.idMeal}</p>
+                                    <p><strong>Area:</strong> ${meal.strArea}</p>
+                                    <p><strong>ingredient1:</strong> ${meal.strIngredient1}</p>
+                                    <p><strong>ingredient2:</strong> ${meal.strIngredient2}</p>
+                                    <p><strong>ingredient3:</strong> ${meal.strIngredient3}</p>
+                                    <p><strong>ingredient4:</strong> ${meal.strIngredient4}</p>
+                                    <p><strong>ingredient5:</strong> ${meal.strIngredient5}</p>
+                                    <p><strong>ingredient6:</strong> ${meal.strIngredient6}</p>
+                                    <p><strong>ingredient7:</strong> ${meal.strIngredient7}</p>
+                                    <p><strong>ingredient8:</strong> ${meal.strIngredient8}</p>
+                                    <p><strong>ingredient9:</strong> ${meal.strIngredient9}</p>
+                                    <p><strong>ingredient10:</strong> ${meal.strIngredient10}</p>
+                                    <p><strong>ingredient11:</strong> ${meal.strIngredient11}</p>
+                                    <p><strong>Source:</strong> ${meal.strSource}</p>
+                                    <p><strong>Tags:</strong> ${meal.strTags}</p>
+                                    <p><strong>Youtube:</strong> ${meal.strYoutube}</p>
+                                    <p><strong>Instractions:</strong> ${meal.strInstructions}</p>
+                                    <input type="text" class="input_box" />
+                                    <button class="btn btn-edit">Edit</button>
+                                    <button class="btn btn-update">Update</button>
+                                    <button class="btn btn-delete">Delete</button>
+                                </div>
+                            `;
+
+                            const input1 = recipeDiv.querySelector(".input_box");
+                            const editButton = recipeDiv.querySelector(".btn-edit");
+                            const updateButton = recipeDiv.querySelector(".btn-update");
+                            const DeleteButton = recipeDiv.querySelector(".btn-delete");
+
+                            editButton.addEventListener("click", function () {
+                                input1.value = meal.strMeal;
+                                input1.style.display = "block";
+                            });
+
+                            updateButton.addEventListener("click", function () {
+                                let new_value = input1.value;
+                                recipeDiv.querySelector("#text").innerText = new_value;
+                            });
+                            DeleteButton.addEventListener("click", function () {
+                                recipeDiv.remove();
+                            });
+
+                            mainDiv1.append(recipeDiv);
+                        });
+                    } else {
+                        mainDiv1.innerHTML = "<p class='text-white text-xl'>No results found.</p>";
+                    }
+                })
+                .catch(err => {
+                    console.log("Error");
+                });
+        });
+    </script>
+</body>
+</html>

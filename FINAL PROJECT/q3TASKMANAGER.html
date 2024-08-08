@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h1 {
+            text-align: center;
+            color: #3182ce;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        .task-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .task-input input, .task-input select, .task-input button {
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            outline: none;
+        }
+        .task-input input {
+            flex: 2;
+        }
+        .task-input select {
+            flex: 1;
+        }
+        .task-input button {
+            background-color: #38a169;
+            color: white;
+            cursor: pointer;
+            flex: 0.5;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        .task-input button:hover {
+            background-color: #2f855a;
+        }
+        .filter-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+        .filter-container select {
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+        }
+        .task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .task-item {
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            background: #f7fafc;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .task-item:hover {
+            background-color: #edf2f7;
+            transform: translateY(-3px);
+        }
+        .task-item .task-name {
+            flex: 1;
+            font-size: 1.1rem;
+        }
+        .task-item .priority {
+            margin-left: 10px;
+            font-weight: bold;
+            color: #718096;
+        }
+        .task-item button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .task-item .edit-btn {
+            background-color: #f6ad55;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .task-item .edit-btn:hover {
+            background-color: #dd6b20;
+        }
+        .task-item .delete-btn {
+            background-color: #e53e3e;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .task-item .delete-btn:hover {
+            background-color: #c53030;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Task Management System</h1>
+        <div class="task-input">
+            <input type="text" id="taskInput" placeholder="New Task">
+            <select id="priorityInput">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        <div class="filter-container">
+            <select id="filter" onchange="filterTasks()">
+                <option value="All">All</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+        </div>
+        <ul id="taskList" class="task-list"></ul>
+    </div>
+    
+    <script>
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+        function addTask() {
+            const taskInput = document.getElementById('taskInput').value;
+            const priorityInput = document.getElementById('priorityInput').value;
+
+            if (taskInput === '') {
+                alert('Task cannot be empty');
+                return;
+            }
+
+            const task = {
+                id: Date.now(),
+                name: taskInput,
+                priority: priorityInput
+            };
+
+            tasks.push(task);
+            document.getElementById('taskInput').value = '';
+            saveTasks();
+            renderTasks();
+        }
+
+        function deleteTask(id) {
+            tasks = tasks.filter(task => task.id !== id);
+            saveTasks();
+            renderTasks();
+        }
+
+        function updateTask(id) {
+            const newTaskName = prompt('Enter new task name:');
+            if (newTaskName !== null && newTaskName.trim() !== '') {
+                tasks = tasks.map(task => 
+                    task.id === id ? { ...task, name: newTaskName } : task
+                );
+                saveTasks();
+                renderTasks();
+            }
+        }
+
+        function renderTasks(filter = 'All') {
+            const taskList = document.getElementById('taskList');
+            taskList.innerHTML = '';
+
+            const filteredTasks = tasks.filter(task => 
+                filter === 'All' || task.priority === filter
+            );
+
+            filteredTasks.forEach(task => {
+                const taskItem = document.createElement('li');
+                taskItem.className = 'task-item';
+                taskItem.innerHTML = `
+                    <span class="task-name">${task.name}</span> 
+                    <span class="priority">[${task.priority}]</span>
+                    <div class="task-actions">
+                        <button class="edit-btn" onclick="updateTask(${task.id})">Edit</button>
+                        <button class="delete-btn" onclick="deleteTask(${task.id})">Delete</button>
+                    </div>
+                `;
+                taskList.appendChild(taskItem);
+            });
+        }
+
+        function filterTasks() {
+            const filter = document.getElementById('filter').value;
+            renderTasks(filter);
+        }
+
+        function saveTasks() {
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+
+        document.addEventListener('DOMContentLoaded', () => renderTasks());
+    </script>
+</body>
+</html>
